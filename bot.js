@@ -33,7 +33,7 @@ bot.onText(/\/start/, (msg) => {
       inline_keyboard: [
         [
           {
-            text: 'Open Valentine WebApp',
+            text: 'ВАЛЕНТИНКААА ЮХУУУУУ',
             web_app: { url: webAppUrl }
           }
         ]
@@ -41,5 +41,5 @@ bot.onText(/\/start/, (msg) => {
     }
   };
 
-  bot.sendMessage(chatId, 'Click the button to open Valentine WebApp', inlineKeyboard);
+  bot.sendMessage(chatId, 'Нажми на кнопку', inlineKeyboard);
 });
