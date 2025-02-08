@@ -9,7 +9,7 @@ body {
     justify-content: center;
     font-family: 'Indie Flower';
     font-weight: 400;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('img/bg4.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('img/bg4.jpg');
     background-size: contain;
     background-repeat: repeat;
     margin: 0; /* обнуление отступов */
