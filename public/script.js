@@ -1,64 +1,62 @@
-// Инициализация Telegram Web App
-const tg = window.Telegram.WebApp;
-tg.expand(); // Разворачиваем webview на весь экран
+function toggleDiv1122() {
+    var div11 = document.getElementById('div11');
+    var div22 = document.getElementById('div22');
 
-$(function() {
-  // Инициализируем turn.js на контейнере #book
-  $('#book').turn({
-    width: 700,       // ширина книги (соответствует CSS)
-    height: 450,      // высота книги
-    autoCenter: true, // книга будет центрироваться
-    display: 'double' // двойной разворот (как настоящая книга)
-  });
-
-  // Кнопка "ДА!"
-  $('#yesBtn').on('click', function() {
-    startFireworks();
-    // Отправляем данные боту
-    tg.sendData('love_confirmed');
-  });
-
-  // Кнопка "НЕТ..."
-  $('#noBtn').on('click', function() {
-    alert('Я подожду, пока ты изменишь решение! \u{1F60A}');
-  });
-});
-
-/***********************
- * Функции для фейерверка
- ***********************/
-
-const fireworksContainer = document.getElementById('fireworks');
-
-function startFireworks() {
-  fireworksContainer.style.display = 'block';
-
-  for (let i = 0; i < 30; i++) {
-    const spark = document.createElement('div');
-    spark.style.position = 'absolute';
-    spark.style.width = '10px';
-    spark.style.height = '10px';
-    spark.style.borderRadius = '50%';
-    spark.style.background = getRandomColor();
-    spark.style.left = (50 + Math.random() * 20 - 10) + '%';
-    spark.style.bottom = '0px';
-    spark.style.opacity = 1;
-    spark.style.transition = 'all 2s ease';
-
-    fireworksContainer.appendChild(spark);
-
-    setTimeout(() => {
-      spark.style.transform = `translateY(-${200 + Math.random() * 200}px)`;
-      spark.style.opacity = 0;
-    }, 50);
-
-    setTimeout(() => {
-      fireworksContainer.removeChild(spark);
-    }, 2500);
-  }
+    if (div11.style.display !== 'none') {
+        div11.style.display = 'none';
+        div22.style.display = 'block';
+    } else {
+        div11.style.display = 'block';
+        div22.style.display = 'none';
+    }
 }
 
-function getRandomColor() {
-  const colors = ['red', 'yellow', 'orange', 'pink', 'violet', 'blue', 'lime', 'gold'];
-  return colors[Math.floor(Math.random() * colors.length)];
+function toggleDiv1() {
+    var div1 = document.getElementById('div1');
+    var div2 = document.getElementById('div2');
+
+    if (div1.style.display !== 'none') {
+        div1.style.display = 'none';
+        div2.style.display = 'block';
+    } else {
+        div1.style.display = 'block';
+        div2.style.display = 'none';
+    }
+}
+
+function increaseSize() {
+    var button1 = document.getElementById('btn-yes');
+    var maxSize = 500;
+    var currentSize = parseInt(window.getComputedStyle(button1).getPropertyValue('padding'));
+
+    function increaseButtonSize() {
+        currentSize += 30;
+        if (currentSize < maxSize) {
+            button1.style.padding = currentSize + 'px';
+        } else {
+            resetButtonSize();
+        }
+    }
+    increaseButtonSize();
+}
+
+function resetButtonSize() {
+    var button = document.getElementById('btn-yes');
+    button.style.padding = '8px';
+}
+
+function toggleDiv2() {
+    var div2 = document.getElementById('div2');
+    var div3 = document.getElementById('div3');
+    var hearts = document.getElementById('heart-float');
+
+    if (div2.style.display !== 'none') {
+        div2.style.display = 'none';
+        div3.style.display = 'block';
+        hearts.style.display = 'block';
+    } else {
+        div2.style.display = 'block';
+        div3.style.display = 'none';
+        hearts.style.display = 'none';
+    }
 }

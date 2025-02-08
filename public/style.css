@@ -1,77 +1,364 @@
-/* Фон и базовая стилизация */
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Protest+Riot&display=swap');
+
 body {
-    margin: 0;
-    padding: 0;
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    background: linear-gradient(135deg, #ffcccc 0%, #fff0f5 100%);
+    min-height: 90vh;
+    background-color: rgb(254, 182, 203);
+    color: black;
     display: flex;
-    justify-content: center;
     align-items: center;
-    min-height: 100vh;
-  }
-  
-  .container {
-    position: relative;
-    margin: 20px;
-  }
-  
-  /* КНИГА (turn.js) размеры */
-  #book {
-    width: 700px;   /* Ширина книги (при display: 'double') */
-    height: 450px;  /* Высота книги */
-    margin: 0 auto;
-    background: #ccc; /* Можно убрать/изменить */
-  }
-  
-  /* Каждая страница */
-  .page {
-    background: #fff;
+    justify-content: center;
+    font-family: 'Indie Flower';
+    font-weight: 400;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('img/bg4.png');
+    background-size: contain;
+    background-repeat: repeat;
+    margin: 0; /* обнуление отступов */
+    padding: 0;
+}
+
+.parent {
+    background-color: #eeeedd;
+    width: 480px;
+    height: 480px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 100px 200px 0 rgba(0, 0, 0, 0.2), 0 100px 200px 0 rgba(0, 0, 0, 0.19);
+}
+
+.parent2 {
+    width: 700px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    box-sizing: border-box;
-    padding: 20px;
-    text-align: center;
-    position: relative; /* Чтобы контент не вылезал */
-  }
-  .page h1, .page h2 {
-    margin: 10px 0;
-    color: #cc0052;
-  }
-  .page img {
-    max-width: 80%;
-    margin: 10px 0;
-    border-radius: 6px;
-    box-shadow: 0 0 6px rgba(0,0,0,0.2);
-  }
-  
-  /* Финальная страница (4) */
-  .final-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .final-buttons {
+    background-color: #101011;
+    opacity: 1;
+}
+
+.child {
+    width: 400px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.child2 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.child h2 {
+    width: 100%;
+    font-style: italic;
+    font-weight: 500;
+    text-align: left;
+}
+
+.child h3 {
+    font-weight: 100;
+    text-align: justify;
+    font-size: 18px;
+}
+
+.child button {
+    background-color: rgb(202, 161, 240);
+    padding: 11px 25px;
+    border: 1px solid transparent;
+    font-size: 16px;
     margin-top: 20px;
-  }
-  .final-buttons button {
-    padding: 10px 20px;
-    margin: 0 10px;
-    border: none;
-    border-radius: 8px;
-    background: #ff69b4;
-    color: #fff;
-    font-size: 1em;
     cursor: pointer;
+    font-family: 'Indie Flower';
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.child button:hover {
+    background-color: rgb(179, 136, 219);
+}
+
+.goodbye {
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+}
+
+/* part 2 */
+.img {
+    width: 260px;
+    height: 180px;
+}
+
+.img2 {
+    width: 290px;
+    height: 200px;
+}
+
+#btn-yes {
+    background-color: rgb(89, 188, 89);
+    width: 100px;
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+    font-family: 'Indie Flower';
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#btn-yes:hover {
+    background-color: rgb(70, 207, 70);
+}
+
+#btn-no {
+    background-color: rgb(219, 65, 65);
+    width: 100px;
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+    font-family: 'Indie Flower';
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#btn-no:hover {
+    background-color: rgb(255, 73, 73);
+}
+
+@keyframes heartBeat {
+    0% { width: 35px; }
+    50% { width: 50px; }
+    100% { width: 35px; }
+}
+
+.heart {
+    display: inline-block;
+    width: 35px;
+    aspect-ratio: 1;
+    border-image: radial-gradient(red 69%, #0000 70%) 84.5%/50%;
+    clip-path: polygon(-41% 0, 50% 91%, 141% 0);
+    cursor: pointer;
+    animation-name: heartBeat;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes heartBeat-big {
+    0% { width: 85px; }
+    50% { width: 100px; }
+    100% { width: 85px; }
+}
+
+.heart-big {
+    display: inline-block;
+    width: 85px;
+    aspect-ratio: 1;
+    border-image: radial-gradient(red 69%, #0000 70%) 84.5%/50%;
+    clip-path: polygon(-41% 0, 50% 91%, 141% 0);
+    cursor: pointer;
+    animation-name: heartBeat-big;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes heartMove {
+    0% { left: 50%; top: 50%; }
+    100% { left: 50%; top: 0%; }
+}
+
+.heart-letter {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-name: heartMove;
+    animation-duration: 4s;  
+    animation-fill-mode: forwards;
+}
+
+@keyframes heartFloat-1 {
+    0% { top: 100%; }
+    50% { left: 65%; }
+    100% { top: -10%; left: 60%; }
+}
+.heart-yes-1 {
+    position: fixed;
+    top: 100%;
+    left: 50%;
+    animation: heartFloat-1 8s infinite 1s;
+}
+
+@keyframes heartFloat-2 {
+    0% { top: 100%; left: 38%; }
+    50% { left: 25%; }
+    100% { top: -10%; left: 25%; }
+}
+.heart-yes-2 {
+    position: fixed;
+    top: 100%;
+    left: 50%;
+    animation: heartFloat-2 8s infinite 0.5s;
+}
+
+@keyframes heartFloat-3 {
+    0% { top: 100%; left: 10%; }
+    50% { left: 10%; }
+    100% { top: -10%; left: 13%; }
+}
+.heart-yes-3 {
+    position: fixed;
+    top: 100%;
+    left: 50%;
+    animation: heartFloat-3 8s infinite 0.7s;
+}
+
+@keyframes heartFloat-4 {
+    0% { top: 100%; left: 90%; }
+    50% { left: 87%; }
+    100% { top: -10%; left: 91%; }
+}
+.heart-yes-4 {
+    position: fixed;
+    top: 100%;
+    left: 50%;
+    animation: heartFloat-4 8s infinite 0.3s;
+}
+
+@keyframes heartFloat-5 {
+    0% { top: 100%; left: 65%; }
+    50% { left: 50%; }
+    100% { top: -10%; left: 50%; }
+}
+.heart-yes-5 {
+    position: fixed;
+    top: 100%;
+    left: 50%;
+    animation: heartFloat-5 8s infinite 3s;
+}
+
+@keyframes heartFloat-6 {
+    0% { top: 100%; left: 78%; }
+    50% { left: 78%; }
+    100% { top: -10%; left: 78%; }
+}
+.heart-yes-6 {
+    position: fixed;
+    top: 100%;
+    left: 50%;
+    animation: heartFloat-6 8s infinite 4s;
+}
+
+@keyframes heartFloat-7 {
+    0% { top: 100%; left: 26%; }
+    50% { left: 20%; }
+    100% { top: -10%; left: 17%; }
+}
+.heart-yes-7 {
+    position: fixed;
+    top: 100%;
+    left: 50%;
+    animation: heartFloat-7 8s infinite;
+}
+
+@keyframes heartFloat-8 {
+    0% { top: 100%; left: 36%; }
+    50% { left: 35%; }
+    100% { top: -10%; left: 35%; }
+}
+.heart-yes-8 {
+    position: fixed;
+    top: 100%;
+    left: 50%;
+    animation: heartFloat-8 8s infinite 2.9s;
+}
+
+@keyframes heartFloat-9 {
+    0% { top: 100%; left: 47%; }
+    50% { left: 44%; }
+    100% { top: -10%; left: 43%; }
+}
+.heart-yes-9 {
+    position: fixed;
+    top: 100%;
+    left: 50%;
+    animation: heartFloat-9 8s infinite 2.5s;
+}
+
+@keyframes heartFloat-10 {
+    0% { top: 100%; left: 97%; }
+    50% { left: 95%; }
+    100% { top: -10%; left: 96%; }
+}
+.heart-yes-10 {
+    position: fixed;
+    top: 100%;
+    left: 50%;
+    animation: heartFloat-10 8s infinite 2s;
+}
+
+@keyframes heartFloat-11 {
+    0% { top: 100%; left: 5%; }
+    50% { left: 4%; }
+    100% { top: -10%; left: 3%; }
+}
+.heart-yes-11 {
+    position: fixed;
+    top: 100%;
+    left: 50%;
+    animation: heartFloat-11 8s infinite 2.7s;
+}
+
+@keyframes heartFloat-12 {
+    0% { top: 100%; left: 70%; }
+    50% { left: 71%; }
+    100% { top: -10%; left: 71%; }
+}
+.heart-yes-12 {
+    position: fixed;
+    top: 100%;
+    left: 50%;
+    animation: heartFloat-12 8s infinite 2s;
+}
+
+
+/* Адаптив для маленьких экранов */
+@media (max-width: 600px) {
+  .parent2 {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: none;
   }
-  
-  /* Фейерверки */
-  .fireworks-container {
-    position: absolute;
-    top: 0; left: 0; 
-    width: 100%; height: 100%;
-    pointer-events: none;
-    overflow: hidden;
-    display: none;
+
+  .parent {
+    width: 90vw;
+    height: auto;
+    max-height: 90vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
-  
+
+  .child, .child2 {
+    width: 85vw;
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin: 0 auto;
+  }
+}

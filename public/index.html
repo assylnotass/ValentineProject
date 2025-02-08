@@ -1,65 +1,95 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Валентинка с перелистыванием</title>
-
-  <!-- Telegram WebApp SDK -->
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
-
-  <!-- jQuery (обязательно для turn.js) -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-  <!-- turn.js (версия 4) -->
-  <script src="https://cdn.jsdelivr.net/gh/blasten/turn.js@4/turn.min.js"></script>
-
-  <!-- Стили -->
-  <link rel="stylesheet" href="./style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cache-control" content="no-cache"> 
+    <meta http-equiv="expires" content="0"> 
+    <meta http-equiv="pragma" content="no-cache">
+    <link rel="icon" href="img/icon-tab.png">
+    <title>For You</title>
+    <!-- Подключаем стили -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <!-- КНИГА -->
-    <div id="book">
-      <!-- Страница 1 (Обложка) -->
-      <div class="page">
-        <h1>Особенная Валентинка</h1>
-        <p>Для самой прекрасной девушки!</p>
-        <img src="images/page1.jpg" alt="Обложка 1"/>
-        <p style="margin-top: 20px;">Потяни за уголок страницы, чтобы открыть...</p>
-      </div>
+    <section id="div11" class="parent2">
+        <div class="heart" id="div11" onclick="toggleDiv1122()"></div>
+    </section>
 
-      <!-- Страница 2 -->
-      <div class="page">
-        <h2>Страница 2</h2>
-        <p>Сегодня 14 февраля, и я хочу сказать...</p>
-        <img src="images/page2.jpg" alt="Фото 2"/>
-        <p>...как сильно я тебя люблю и ценю!</p>
-      </div>
-
-      <!-- Страница 3 -->
-      <div class="page">
-        <h2>Страница 3</h2>
-        <p>Ты делаешь мой мир лучше, и я рад, что мы вместе!</p>
-        <img src="images/page3.jpg" alt="Фото 3"/>
-        <p>Листай дальше...</p>
-      </div>
-
-      <!-- Страница 4 (финальная) -->
-      <div class="page final-page">
-        <h2>Будешь ли ты моей Валентинкой?</h2>
-        <img src="images/page4.jpg" alt="Фото 4"/>
-        <div class="final-buttons">
-          <button id="yesBtn">Да!</button>
-          <button id="noBtn">Нет...</button>
+    <section class="parent" id="div22" style="display: none;">
+        <div class="heart-letter">
+            <div class="heart" id="heartLetter"></div>
         </div>
-      </div>
+
+        <section class="child" id="div1">
+            <h2>To my one and only,</h2>
+            <h3>
+                I can't help but think about how grateful I am to have you in my life. 
+                These past 4 years 6 months have been the happiest moments of my life. 
+                Thank you for bringing so much joy and love into my life, and there's no one else I'd rather share this Valentine's Day with. 
+                You are my everything.
+            </h3>
+            <h3 class="goodbye">love, marvin</h3>
+            <h3 class="goodbye">BUT WAITTTTTTTTTTTT......</h3>
+            <button onclick="toggleDiv1()">IMPORTANT QUESTION</button>
+        </section>
+
+        <section class="child2" id="div2" style="display: none;">
+            <img src="img/bunny-shoot.gif" alt="bunny" class="img">
+            <h1 style="text-align: center; font-size: 25px;">Will you be my valentine?</h1>
+            <div class="container4button">
+                <button id="btn-yes" onclick="toggleDiv2()">YES</button>
+                <button id="btn-no" onclick="increaseSize()">NO</button>
+            </div>
+        </section>
+
+        <section class="child2" id="div3" style="display: none;">
+            <img src="img/kiss-you.gif" alt="kiss" class="img2">
+            <h3 style="letter-spacing: 3px;">YAYYYYYYY, FINALLY LAAAA!!!</h3>
+            <h3 style="letter-spacing: 3px;">5th valentines with my babyyy!! &lt;3</h3>
+        </section>
+    </section>
+
+    <div id="heart-float" style="display: none;">
+        <div class="heart-yes-1">
+            <div class="heart-big"></div>
+        </div>
+        <div class="heart-yes-2">
+            <div class="heart-big"></div>
+        </div>
+        <div class="heart-yes-3">
+            <div class="heart-big"></div>
+        </div>
+        <div class="heart-yes-4">
+            <div class="heart-big"></div>
+        </div>
+        <div class="heart-yes-5">
+            <div class="heart-big"></div>
+        </div>
+        <div class="heart-yes-6">
+            <div class="heart-big"></div>
+        </div>
+        <div class="heart-yes-7">
+            <div class="heart-big"></div>
+        </div>
+        <div class="heart-yes-8">
+            <div class="heart-big"></div>
+        </div>
+        <div class="heart-yes-9">
+            <div class="heart-big"></div>
+        </div>
+        <div class="heart-yes-10">
+            <div class="heart-big"></div>
+        </div>
+        <div class="heart-yes-11">
+            <div class="heart-big"></div>
+        </div>
+        <div class="heart-yes-12">
+            <div class="heart-big"></div>
+        </div>
     </div>
 
-    <!-- Контейнер для фейерверка -->
-    <div class="fireworks-container" id="fireworks"></div>
-  </div>
-
-  <!-- Подключаем JS-код -->
-  <script src="./script.js"></script>
+    <!-- Подключаем скрипт -->
+    <script src="script.js"></script>
 </body>
 </html>
