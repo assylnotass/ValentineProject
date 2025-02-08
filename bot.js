@@ -12,7 +12,7 @@ bot.onText(/\/start/, (msg) => {
           {
             text: 'Открыть Валентинку',
             web_app: {
-              url: 'https://username.github.io/valentine-project/'
+              url: 'https://assylnotass.github.io/ValentineProject/public/index.html'
             }
           }
         ]
