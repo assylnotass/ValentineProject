@@ -1,4 +1,4 @@
-/* Общий фон */
+/* Фон и базовая стилизация */
 body {
     margin: 0;
     padding: 0;
@@ -10,32 +10,17 @@ body {
     min-height: 100vh;
   }
   
-  /* Контейнер, чтобы центрировать «книгу» */
   .container {
+    position: relative;
     margin: 20px;
   }
   
-  /* Кнопки сверху (перелистывания) */
-  .nav-buttons-top {
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  .nav-buttons-top button {
-    padding: 8px 15px;
-    margin: 0 5px;
-    border: none;
-    border-radius: 6px;
-    background: #ff69b4;
-    color: #fff;
-    cursor: pointer;
-    font-size: 1em;
-  }
-  
-  /* КНИГА (turn.js) */
+  /* КНИГА (turn.js) размеры */
   #book {
-    width: 600px;   /* можно менять размеры */
-    height: 400px;
+    width: 700px;   /* Ширина книги (при display: 'double') */
+    height: 450px;  /* Высота книги */
     margin: 0 auto;
+    background: #ccc; /* Можно убрать/изменить */
   }
   
   /* Каждая страница */
@@ -46,8 +31,9 @@ body {
     box-sizing: border-box;
     padding: 20px;
     text-align: center;
+    position: relative; /* Чтобы контент не вылезал */
   }
-  .page h2, .page h1 {
+  .page h1, .page h2 {
     margin: 10px 0;
     color: #cc0052;
   }
@@ -58,7 +44,7 @@ body {
     box-shadow: 0 0 6px rgba(0,0,0,0.2);
   }
   
-  /* Финальная страница */
+  /* Финальная страница (4) */
   .final-page {
     display: flex;
     flex-direction: column;
@@ -84,8 +70,8 @@ body {
     position: absolute;
     top: 0; left: 0; 
     width: 100%; height: 100%;
-    pointer-events: none; /* не мешает кликам */
+    pointer-events: none;
     overflow: hidden;
-    display: none; /* изначально скрыто */
+    display: none;
   }
   

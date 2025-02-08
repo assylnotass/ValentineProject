@@ -2,37 +2,30 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Валентинка с переворотом страниц</title>
+  <title>Валентинка с перелистыванием</title>
 
   <!-- Telegram WebApp SDK -->
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
-  <!-- jQuery (обязателен для turn.js) -->
+  <!-- jQuery (обязательно для turn.js) -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-  <!-- turn.js (версия 4) с CDN -->
+  <!-- turn.js (версия 4) -->
   <script src="https://cdn.jsdelivr.net/gh/blasten/turn.js@4/turn.min.js"></script>
 
-  <!-- Подключаем стили -->
+  <!-- Стили -->
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  
   <div class="container">
-    <!-- Кнопки навигации - по желанию -->
-    <div class="nav-buttons-top">
-      <button id="prevPageBtn">← Предыдущая страница</button>
-      <button id="nextPageBtn">Следующая страница →</button>
-    </div>
-
-    <!-- "КНИГА" для turn.js -->
+    <!-- КНИГА -->
     <div id="book">
-      <!-- Обложка (страница 1) -->
+      <!-- Страница 1 (Обложка) -->
       <div class="page">
-        <h1>Моя особенная Валентинка</h1>
+        <h1>Особенная Валентинка</h1>
         <p>Для самой прекрасной девушки!</p>
-        <img src="images/page1.jpg" alt="Фото 1"/>
-        <p>Нажми кнопку «Перелистнуть», чтобы открыть...</p>
+        <img src="images/page1.jpg" alt="Обложка 1"/>
+        <p style="margin-top: 20px;">Потяни за уголок страницы, чтобы открыть...</p>
       </div>
 
       <!-- Страница 2 -->
@@ -46,14 +39,15 @@
       <!-- Страница 3 -->
       <div class="page">
         <h2>Страница 3</h2>
-        <p>Ты делаешь мой мир лучше, и я рад...</p>
+        <p>Ты делаешь мой мир лучше, и я рад, что мы вместе!</p>
         <img src="images/page3.jpg" alt="Фото 3"/>
-        <p>...что мы вместе!</p>
+        <p>Листай дальше...</p>
       </div>
 
-      <!-- Финальная страница (4) -->
+      <!-- Страница 4 (финальная) -->
       <div class="page final-page">
         <h2>Будешь ли ты моей Валентинкой?</h2>
+        <img src="images/page4.jpg" alt="Фото 4"/>
         <div class="final-buttons">
           <button id="yesBtn">Да!</button>
           <button id="noBtn">Нет...</button>
@@ -61,11 +55,11 @@
       </div>
     </div>
 
-    <!-- Контейнер для фейерверков -->
+    <!-- Контейнер для фейерверка -->
     <div class="fireworks-container" id="fireworks"></div>
   </div>
 
-  <!-- Подключаем основной скрипт -->
+  <!-- Подключаем JS-код -->
   <script src="./script.js"></script>
 </body>
 </html>

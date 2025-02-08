@@ -1,45 +1,38 @@
 // Инициализация Telegram Web App
 const tg = window.Telegram.WebApp;
-tg.expand(); // Разворачиваем на весь экран
+tg.expand(); // Разворачиваем webview на весь экран
 
-// Когда всё загрузится...
 $(function() {
   // Инициализируем turn.js на контейнере #book
-  $("#book").turn({
-    // размеры "книги" можно прописать прямо тут или через CSS
-    // width: 600,
-    // height: 400,
-    autoCenter: true, // центрируем книгу
-    display: 'double' // по умолчанию двойной разворот (можете 'single' – по одной странице)
+  $('#book').turn({
+    width: 700,       // ширина книги (соответствует CSS)
+    height: 450,      // высота книги
+    autoCenter: true, // книга будет центрироваться
+    display: 'double' // двойной разворот (как настоящая книга)
   });
 
-  // Кнопки «Предыдущая» / «Следующая» страница
-  document.getElementById('prevPageBtn').addEventListener('click', () => {
-    $("#book").turn("previous");
-  });
-  document.getElementById('nextPageBtn').addEventListener('click', () => {
-    $("#book").turn("next");
-  });
-
-  // Кнопка "ДА!" на финальной странице
-  document.getElementById('yesBtn').addEventListener('click', () => {
+  // Кнопка "ДА!"
+  $('#yesBtn').on('click', function() {
     startFireworks();
-    // отправляем данные боту:
+    // Отправляем данные боту
     tg.sendData('love_confirmed');
   });
 
-  // Кнопка "НЕТ..." 
-  document.getElementById('noBtn').addEventListener('click', () => {
-    alert("Я подожду, пока ты изменишь решение! \u{1F60A}");
+  // Кнопка "НЕТ..."
+  $('#noBtn').on('click', function() {
+    alert('Я подожду, пока ты изменишь решение! \u{1F60A}');
   });
 });
 
-// Фейерверки
+/***********************
+ * Функции для фейерверка
+ ***********************/
+
 const fireworksContainer = document.getElementById('fireworks');
 
 function startFireworks() {
   fireworksContainer.style.display = 'block';
-  
+
   for (let i = 0; i < 30; i++) {
     const spark = document.createElement('div');
     spark.style.position = 'absolute';
