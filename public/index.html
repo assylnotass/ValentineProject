@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Моя Валентинка</title>
+  <!-- Telegram WebApp SDK -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <!-- Подключаем стили -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="book-container">
+    <!-- ОБЛОЖКА (Cover) -->
+    <div class="cover" id="cover">
+      <h1>Особенная Валентинка</h1>
+      <p>Для самой прекрасной девушки!</p>
+      <button id="openBookBtn">Открыть книгу</button>
+    </div>
+
+    <!-- СТРАНИЦА 1 -->
+    <div class="pages" id="page1">
+      <h2>Страница 1</h2>
+      <p>Милая, сегодня 14 февраля, и я хочу рассказать...</p>
+      <img class="page-image" src="images/page1.jpg" alt="Фото 1">
+      <div class="nav-buttons">
+        <button id="toPage2" class="nav-btn">Далее &gt;</button>
+      </div>
+    </div>
+
+    <!-- СТРАНИЦА 2 -->
+    <div class="pages" id="page2">
+      <h2>Страница 2</h2>
+      <p>...как сильно я тебя люблю и ценю. Ты делаешь мой мир лучше...</p>
+      <img class="page-image" src="images/page2.jpg" alt="Фото 2">
+      <div class="nav-buttons">
+        <button id="backToPage1" class="nav-btn">&lt; Назад</button>
+        <button id="toPage3" class="nav-btn">Далее &gt;</button>
+      </div>
+    </div>
+
+    <!-- СТРАНИЦА 3 -->
+    <div class="pages" id="page3">
+      <h2>Страница 3</h2>
+      <p>...и я хочу спросить...</p>
+      <img class="page-image" src="images/page3.jpg" alt="Фото 3">
+      <div class="nav-buttons">
+        <button id="backToPage2" class="nav-btn">&lt; Назад</button>
+        <button id="toFinalPage" class="nav-btn">Далее &gt;</button>
+      </div>
+    </div>
+
+    <!-- ФИНАЛЬНАЯ СТРАНИЦА -->
+    <div class="pages" id="finalPage">
+      <h2>Будешь ли ты моей Валентинкой?</h2>
+      <div class="final-buttons">
+        <button id="yesBtn">Да!</button>
+        <button id="noBtn">Нет...</button>
+      </div>
+    </div>
+
+    <!-- Контейнер для фейерверков -->
+    <div class="fireworks-container" id="fireworks"></div>
+  </div>
+
+  <!-- Подключаем скрипт -->
+  <script src="./script.js"></script>
+</body>
+</html>

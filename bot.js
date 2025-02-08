@@ -1,42 +1,36 @@
 const TelegramBot = require('node-telegram-bot-api');
 
-// Подставьте ваш реальный токен
+// Ваш токен бота
 const token = '7508040516:AAEgmElMH5gCOrpeB1SWwy3Qn5QahjjO3-E';
-
-// Создаём бота в режиме Long Polling:
 const bot = new TelegramBot(token, { polling: true });
 
-// При старте или при вводе /start...
+// /start
 bot.onText(/\/start/, (msg) => {
-  const chatId = msg.chat.id;
-
-  bot.sendMessage(chatId, "Привет! Нажми кнопку, чтобы открыть Валентинку :)", {
+  bot.sendMessage(msg.chat.id, "Привет! Нажми кнопку, чтобы открыть Валентинку", {
     reply_markup: {
       keyboard: [
         [
           {
             text: 'Открыть Валентинку',
             web_app: {
-              // Укажите ссылку на мини-приложение (valentine.html).
-              // Если будете хостить локально, придётся пробросить туннель (ngrok) или выложить на хостинг.
-              url: 'https://assylnotass.github.io/ValentineProject/public/valentine.html'
+              // Вставьте сюда HTTPS-ссылку, по которой доступен index.html
+              url: 'https://assylnotass.github.io/ValentineProject/public/index.html'
             }
           }
         ]
       ],
-      resize_keyboard: true,
-      one_time_keyboard: false
+      resize_keyboard: true
     }
   });
 });
 
-// Когда из Web App придут данные (например, при нажатии "Да!")
+// Когда кликают "Да" в мини-приложении
 bot.on('web_app_data', (msg) => {
-  const data = msg.web_app_data.data; // строка из tg.sendData(...)
+  const data = msg.web_app_data?.data; 
   if (data === 'love_confirmed') {
     bot.sendMessage(msg.chat.id, "Ура! Она согласилась быть Валентинкой! \u{1F970}");
   } else {
-    bot.sendMessage(msg.chat.id, "Данные из Web App: " + data);
+    bot.sendMessage(msg.chat.id, "Пришли данные: " + data);
   }
 });
 
