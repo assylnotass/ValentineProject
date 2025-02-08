@@ -19,7 +19,7 @@ bot.onText(/\/start/, (msg) => {
             web_app: {
               // Укажите ссылку на мини-приложение (valentine.html).
               // Если будете хостить локально, придётся пробросить туннель (ngrok) или выложить на хостинг.
-              url: 'https://ВАШ_ДОМЕН_ИЛИ_ХОСТИНГ/valentine.html'
+              url: 'https://assylnotass.github.io/ValentineProject/public/valentine.html'
             }
           }
         ]
